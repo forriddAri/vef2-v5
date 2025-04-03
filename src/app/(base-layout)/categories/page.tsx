@@ -21,12 +21,12 @@ export const metadata = {
 
 const query = graphql(
   /* GraphQL */ `
-  query Questioncategory {
-  allQuestioncategories{
-    title
-    slug
-  }
-}   
+    query Questioncategory {
+      allQuestioncategories {
+        title
+        slug
+      }
+    }
   `,
   [],
 );
@@ -36,28 +36,24 @@ const query = graphql(
 */
 
 export default async function CategoriesPage() {
+  const { allQuestioncategories } = await executeQuery(query, {});
 
-    const { allQuestioncategories } = await executeQuery(query, {
-      });
+  console.log(allQuestioncategories);
 
-      console.log(allQuestioncategories)
-
-      if (!allQuestioncategories){
-        notFound()
-      }
+  if (!allQuestioncategories) {
+    notFound();
+  }
 
   return (
     <>
       <h3>Veldu þér smjurningarflokk</h3>
 
       <ul>
-    {allQuestioncategories.map((category) => (
-    <li key={category.slug}>
-        <Link href={`/questions/${category.slug}`}>
-        {category.title}
-        </Link>
-    </li>
-))}
+        {allQuestioncategories.map((category) => (
+          <li key={category.slug}>
+            <Link href={`/questions/${category.slug}`}>{category.title}</Link>
+          </li>
+        ))}
       </ul>
     </>
   );

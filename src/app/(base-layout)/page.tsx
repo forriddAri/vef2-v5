@@ -9,7 +9,9 @@ export default function Page() {
     <>
       <h3>vert þú velkominn Tómas </h3>
       <ul>
-        <Link rel="stylesheet" href="/categories">Flokar</Link>
+        <Link rel="stylesheet" href="/categories">
+          Flokar
+        </Link>
       </ul>
     </>
   );

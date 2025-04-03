@@ -21,27 +21,27 @@ export const metadata = {
 
 const query = graphql(
   /* GraphQL */ `
- query GetQuestions {
-    allQuestions {
-      id
-      questionTitle
-      spurning
-      flokkur {
-        slug
-        title
-      }
-      authors {
-        name
-      }
-      svor {
-      ... on AnswerRecord {
+    query GetQuestions {
+      allQuestions {
         id
-        ans
-        rett
+        questionTitle
+        spurning
+        flokkur {
+          slug
+          title
+        }
+        authors {
+          name
+        }
+        svor {
+          ... on AnswerRecord {
+            id
+            ans
+            rett
+          }
         }
       }
     }
-  }
   `,
   [],
 );
@@ -78,6 +78,3 @@ export default async function QuestionsPage({ params }: { params: { slug: string
     </>
   );
 }
-
-
-
