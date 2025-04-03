@@ -7,18 +7,9 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-      <h3>Choose your preferred template:</h3>
-
+      <h3>vert þú velkominn Tómas </h3>
       <ul>
-        <li>
-          <Link href="/basic">Basic:</Link> <span>Simpler code, great to start exploring</span>
-        </li>
-        <li>
-          <Link href="/real-time-updates">Real-time Updates:</Link>{' '}
-          <span>
-            Slightly more complex code, but content updates in real-time when Draft Mode is on
-          </span>
-        </li>
+        <Link rel="stylesheet" href="/categories">Flokar</Link>
       </ul>
     </>
   );
